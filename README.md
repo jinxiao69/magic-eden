@@ -1,2 +1,8 @@
-This is the test project for Magic Eden.
+# Magic Eden
+
+## How to run
+```
+npm i
+npm start
+```
 
