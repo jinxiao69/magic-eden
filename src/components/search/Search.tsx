@@ -1,5 +1,5 @@
-import React, { ChangeEvent } from "react";
-import { Textarea } from "@chakra-ui/react";
+import React from "react";
+import { Input } from "@chakra-ui/react";
 
 interface SearchNftNameProps {
   onChangeKeyword: (name: string) => void;
@@ -10,21 +10,21 @@ const SearchNftName: React.FC<SearchNftNameProps> = ({
   onChangeKeyword,
   keyword,
 }) => {
-  const onChangeKeyword1 = (event: ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     onChangeKeyword(event.target.value);
   };
 
   return (
-    <Textarea
+    <Input
       id="filled-search"
-      variant="filled"
-      size="small"
+      variant="flushed"
+      placeholder="Enter the keyword"
+      size="md"
       className="filter"
       value={keyword}
-      onChange={onChangeKeyword1}
-      width={500}
-      height={10}
+      onChange={handleChange}
+      width={300}
       marginBottom={10}
     />
   );
